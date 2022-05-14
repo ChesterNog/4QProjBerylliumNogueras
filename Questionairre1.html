@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Questionairre Part 1 </title>
+		<meta charset="utf8" />
+		<meta name="author" content="C.N.T.Nogueras" />
+		<meta name="description" content="vaccination information" />
+		<meta name="keywords" content="h3, form, script, var" />
+		<meta name="date" content="May 14, 2021" />
+		<meta name="revised" content="May 14, 2021" />
+			<link rel="icon"
+		  type="image/png/gif"
+		  href="images/pshs.icon" />
+		  
+		  <style>
+		  
+		  #continue {
+		  
+		  position: absolute;
+		  bottom: 50px;
+		  right: 50px;
+		  
+		  }
+		  
+		  #refuse {
+		  
+		  position: absolute;
+		  bottom: 50px;
+		  left: 50px;
+		  }
+		  
+		  #Send {
+		  
+		  position: absolute;
+		  top: 150px;
+		  left: 20px;
+		  
+		  }
+		  
+		  #Reset {
+		  
+		  position: absolute;
+		  top: 150px;
+		  left: 100px;
+		  
+		  }
+		  
+		  </style>
+		  
+	</head>
+	
+	<body>
+	
+	<h3> Please enter "Yes" without quotation marks if you have experienced this symptom, and "No" without quotation marks if otherwise. </h3>
+	
+	</body>
+	
+	<form onsubmit="return dataOutput()" onreset="return dataReset()">
+		
+	<input type="number" onfocus="functionGreen(this)" onblur="functionRed(this)" id="age"> Age </input><br>
+	<input type="text" onfocus="functionGreen(this)" onblur="functionRed(this)" id="vaccineTwo"> First Dose Vaccine Brand </input><br>
+	<input type="text" onfocus="functionGreen(this)" onblur="functionRed(this)" id="vaccineOne"> Second Dose Vaccine Brand </input><br>
+	<input type="text" onfocus="functionGreen(this)" onblur="functionRed(this)" id="booster"> Brand of Booster Shot </input><br>
+	
+    <input type="submit" id="Send" value="Submit">
+	<input type="reset" id="Reset" name="Reset">
+	<input type="button" id="continue" value="Next Page" onclick="location.href='Questionairre2.html';">
+	<input type="button" id="refuse" value="Previous Page" onclick="location.href='index.html';">
+	
+	</form>
+	
+	<script>
+	
+	var blank = document.getElementById("outputHolder").innerHTML;
+	
+	function functionGreen(formElement) {
+	
+	    formElement.style.width = "150px";
+	    formElement.style.borderColor = "green";
+	
+	    return;
+	}
+	
+	
+	function functionRed(formElement) {
+	     
+		 var a = formElement;
+		 formElement.style.borderColor = "red";
+		 if (a.value == "") {
+		 
+		      alert("Enter a value!");
+			  
+			  return;
+		 
+	     }
+		 
+		 else {
+		 
+		 formElement.style.borderColor = "green";
+		 }
+		 return;
+	}
+	
+	function dataOutput() {
+	
+	     return false;
+		 
+	}
+	
+	function dataReset() {
+	
+	    document.getElementById("age").value = "";
+		document.getElementById("age").borderColor = black;
+		
+		document.getElementById("vaccineOne").value = "";
+		document.getElementById("vaccineOne").borderColor = black;
+		
+		document.getElementById("vaccineTwo").value = "";
+		document.getElementById("vaccineTwo").borderColor = black;
+		
+		document.getElementById("booster").value = "";
+		document.getElementById("booster").borderColor = black;
+		
+	}
+	
+	</script>
+
+</html>

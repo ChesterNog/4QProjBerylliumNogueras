@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Questionairre Part 2 </title>
+		<meta charset="utf8" />
+		<meta name="author" content="C.N.T.Nogueras" />
+		<meta name="description" content="Symptom Information" />
+		<meta name="keywords" content="h3, form, script, var" />
+		<meta name="date" content="May 14, 2021" />
+		<meta name="revised" content="May 14, 2021" />
+			<link rel="icon"
+		  type="image/png/gif"
+		  href="images/pshs.icon" />
+		  
+		  <style>
+		  
+		  #continue {
+		  
+		  position: absolute;
+		  bottom: 50px;
+		  right: 50px;
+		  
+		  }
+		  
+		  #refuse {
+		  
+		  position: absolute;
+		  bottom: 50px;
+		  left: 50px;
+		  }
+		  
+		  #Send {
+		  
+		  position: absolute;
+		  top: 170px;
+		  left: 20px;
+		  
+		  }
+		  
+		  #Reset {
+		  
+		  position: absolute;
+		  top: 170px;
+		  left: 100px;
+		  
+		  }
+		  
+		  </style>
+		  
+	</head>
+	
+	<body>
+	
+	<h3> Please enter "Yes" without quotation marks if you have experienced this symptom, and "No" without quotation marks if otherwise. </h3>
+	
+	</body>
+	
+	<form onsubmit="return dataOutput()" onreset="return dataReset()">
+	
+	<input type="text" id="cough" onfocus="functionGreen(this)" onblur="functionRed(this)"></input>
+	<label for="value1"> Cough </label><br>
+	<input type="text" id="fever" onfocus="functionGreen(this)" onblur="functionRed(this)"></input>
+	<label for="value2"> Fever </label><br>
+	<input type="text" id="SoB" onfocus="functionGreen(this)" onblur="functionRed(this)"></input>
+	<label for="value3"> Shortness of Breath </label><br>
+	<input type="text" id="fatigue" onfocus="functionGreen(this)" onblur="functionRed(this)"></input>
+	<label for="value4"> Fatigue </label><br>
+	<input type="text" id="nausea" onfocus="functionGreen(this)" onblur="functionRed(this)"></input>
+	<label for="value5"> Nausea </label><br>
+	
+	<input type="submit" id="Send" value="submit">
+	<input type="reset" id="Reset" name="Reset">
+	<input type="button" id="continue" value="Next Page" onclick="location.href='Summary.html';">
+	<input type="button" id="refuse" value="Previous Page" onclick="location.href='Questionairre1.html';">
+	
+	</form>
+	
+	<script>
+	
+	var blank = document.getElementById("outputHolder").innerHTML;
+	
+	function functionGreen(formElement) {
+	
+	    formElement.style.width = "150px";
+	    formElement.style.borderColor = "green";
+	
+	    return;
+	}
+	
+	
+	function functionRed(formElement) {
+	     
+		 var a = formElement;
+		 formElement.style.borderColor = "red";
+		 if (a.value == "") {
+		 
+		      alert("Enter a value!");
+			  
+			  return;
+		 
+	     }
+		 
+		 else {
+		 
+		 formElement.style.borderColor = "green";
+		 }
+		 return;
+	}
+	
+	function dataOutput() {
+	
+	     return false;
+		 
+	}
+	
+	function dataReset() {
+	
+	    document.getElementById("cough").value = "";
+		document.getElementById("cough").borderColor = black;
+		
+		document.getElementById("fever").value = "";
+		document.getElementById("fever").borderColor = black;
+		
+		document.getElementById("SoB").value = "";
+		document.getElementById("Sob").borderColor = black;
+		
+		document.getElementById("fatigue").value = "";
+		document.getElementById("fatigue").borderColor = black;
+		
+		document.getElementById("nausea").value = "";
+		document.getElementById("nausea").borderColor = black;
+		
+	}
+	
+	</script>
+	
+</html>
